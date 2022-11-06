@@ -1,6 +1,7 @@
-package jpabook.jpashop;
+package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ class MemberRepositoryTest {
     @Rollback(false)
     void saveAndFindForMeber() {
         Member origin_member = new Member();
-        origin_member.setName("hyunsok");
+        origin_member.setName("hyunsok1");
 
         Long saveId = memberRepository.save(origin_member);
         Member savedMember = memberRepository.find(saveId);

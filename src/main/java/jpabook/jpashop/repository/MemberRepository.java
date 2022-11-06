@@ -1,4 +1,4 @@
-package jpabook.jpashop;
+package jpabook.jpashop.repository;
 import jpabook.jpashop.domain.Member;
 import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
@@ -20,6 +20,11 @@ public class MemberRepository {
 
     // memberId로 멤버 테이블 조회 하기
     public Member find(Long id) {
+        return em.find(Member.class, id);
+    }
+
+
+    public Member findOne(Long id) {
         return em.find(Member.class, id);
     }
 
